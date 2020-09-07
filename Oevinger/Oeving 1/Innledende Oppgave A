@@ -1,0 +1,7 @@
+borettslag (borettslag_ID, navn, adresse, antall_hus, etableringsår)  
+
+bygninger (bygning_ID,borettslag, etasjer, adresse) 
+
+andelseiere (andelseier_ID,leilighet_ID (null hvis ingen leilighet))
+
+leiligheter(leilighet_ID, antall_rom, m2, leilighetsnummer (Kan brukes til å beskrive hvilken etasje leiligheten ligger i), andelseier_ID (null hvis ingen eier))
