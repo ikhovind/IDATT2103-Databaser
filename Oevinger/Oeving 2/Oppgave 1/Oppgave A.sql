@@ -1,0 +1,1 @@
+SELECT tittel,utgitt_aar FROM bok where utgitt_aar <1920
