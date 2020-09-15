@@ -1,0 +1,80 @@
+CREATE TABLE borettslag
+(
+navn varchar(30),
+adresse VARCHAR(30),
+postnr int,
+poststed VARCHAR(30),
+antall_enheter int,
+etableringsår int,
+PRIMARY KEY(navn)
+)ENGINE=INNODB;
+
+CREATE TABLE bygning
+(
+adresse VARCHAR(50),
+postnr int,
+poststed VARCHAR(30),
+antall_leilighet int,
+antall etasjer int,
+borettslag_navn VARCHAR(30)
+PRIMARY KEY(adresse, postnr, poststed)
+)ENGINE=INNODB;
+
+
+CREATE TABLE leilighet
+(
+antall_rom int,
+antall_m2 int,
+etasje int,
+leilighetsnummer int,
+medlem_personnr int,
+bygning_adresse VARCHAR(50),
+bygning_postnr int,
+bygning_poststed VARCHAR(30),
+PRIMARY KEY(leilighetsnummer, bygning_adresse, bygning_postnr, bygning_poststed)
+)ENGINE=INNODB;
+
+create TABLE medlem
+(
+personnr int,
+fornavn VARCHAR (20),
+etternavn VARCHAR (20),
+fødselsdato date,
+medlem_siden date,
+leilighetsnummer int,
+bygning_adresse VARCHAR(50),
+bygning_postnr int,
+bygning_poststed VARCHAR(30),
+PRIMARY KEY(personnr)
+)ENGINE=INNODB;
+
+ALTER TABLE leilighet
+ADD FOREIGN KEY (eid_av) REFERENCES medlem(personnr)
+ON UPDATE CASCADE
+
+ALTER TABLE leilighet
+ADD FOREIGN KEY (bygning_adresse, bygning_postnr, bygning_poststed) REFERENCES bygning(adresse, postnr, poststed) 
+ON UPDATE CASCADE
+
+ALTER TABLE bygning
+ADD FOREIGN KEY (borettslag_navn) REFERENCES borettslag(navn)
+ON UPDATE CASCADE
+
+INSERT INTO borettslag 
+VALUES ('Festningen', 'Kristianstensbakken 60', 7060, 'Trondheim', 2, 1992)
+
+INSERT INTO bygning 
+VALUES ('Kristianstensbakken 60', 7060, 'Trondheim', 2, 1, 'Festningen')
+
+INSERT INTO bygning 
+VALUES ('Kristianstensbakken 61', 7060, 'Trondheim', 1, 1, 'Festningen')
+
+INSERT INTO leilighet 
+VALUES (2, 100, 1,1, 'Kristianstensbakken 60', 7060, 'Trondheim', NULL)
+
+INSERT INTO leilighet 
+VALUES (2, 24, 1,2, 'Kristianstensbakken 61', 7060, 'Trondheim', 1234567891)
+
+INSERT INTO leilighet 
+VALUES (1, 100, 1,2, 'Kristianstensbakken 60', 7060, 'Trondheim', 1234567891)
+
