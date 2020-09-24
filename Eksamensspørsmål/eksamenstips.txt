@@ -1,0 +1,2 @@
+Det kommer GROUP BY og SUM på eksamen, der man må oppgi sum for hver unike verdi i en tabell, dette gjør man med å bruke sum og gruppere etter denne verdien
+Snitt er den mest relevante mengdeoperasjonen
