@@ -24,7 +24,7 @@ SELECT COUNT(goals_teams.matchid), goals_teams.mdate, goals_teams.team1, goals_t
 --
 --List the the dates of the matches and the name of the team (teamname) in which Fernando Santos was the team coach (både team1 og team2).
 
-SELECT mdate FROM game WHERE game.team1 IN (SELECT id, teamname FROM eteam WHERE coach = 'Fernando Santos')
+SELECT greek_matches.mdate, greek_matches.team1 eteam.teamname FROM eteam LEFT JOIN (SELECT mdate, team1, team2 FROM game WHERE game.team1 IN (SELECT id FROM eteam WHERE coach = 'Fernando Santos') as greek_matches) ON (greek_matches.team2 = eteam.id)
 --1.4
 --
 --Skriv ut alle lag (teamname) som har skåret minst 4 mål totalt, sotert (synkende) etter antall mål.
