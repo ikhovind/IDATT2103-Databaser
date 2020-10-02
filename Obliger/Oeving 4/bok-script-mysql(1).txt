@@ -1,6 +1,5 @@
 /*
 ** bok-script-mysql.txt
-/*
 ** DROP TABLE-setninger som sletter gamle tabeller
 */
 
