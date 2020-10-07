@@ -1,4 +1,4 @@
-#1.1
+1.1
 
 #Skriv ut alle kampene (31 stk.) med mdate og teamname på begge lagene i hver kamp sortert stigende etter når
 #
@@ -120,7 +120,7 @@ ORDER BY player_goals ASC
 #
 #ferdig
 SELECT * FROM 
-	(SELECT COUNT(goal.matchid) as tot_goals, goal.player FROM goal
+	(SELECT COUNT(DISTINCT goal.matchid) as tot_goals, goal.player FROM goal
 	group by (goal.player)) as temp
 WHERE tot_goals = 1;
 
@@ -148,3 +148,75 @@ SELECT count(*) from
 		ON (team1_goals.id = TeamGoalsPerMatch.matchid AND team1_goals.team2 = TeamGoalsPerMatch.teamid)) as temp
 	where (temp.team1_goals > temp.team2_goals)
 
+#	2. Bruk tabellene fra fotball EM 2012, og skriv SQL-setninger for
+#følgende oppgaver:
+
+#2.1 VIEW
+
+#Svar på følgende oppgave ved å opprette ett eller flere VIEW:
+
+#Finn resultatene for hver kamp inkl. de kampene som endte 0-0 (hvor antall mål er 0):
+
+	CREATE VIEW TeamGoalsPerMatch AS (
+		(SELECT COUNT(teamid) as team_goals, matchid, teamid 
+		FROM goal
+		group by matchid, teamid)
+		);
+
+SELECT team1_goals.*, TeamGoalsPerMatch.team_goals as team2_goals from 
+	(SELECT game.id, game.mdate, game.team1, game.team2, team_goals as team1_goals FROM 
+		TeamGoalsPerMatch 
+		RIGHT JOIN 
+		game
+		ON(TeamGoalsPerMatch.matchid = game.id and game.team1 = TeamGoalsPerMatch.teamid)) as team1_goals
+	LEFT JOIN 
+	TeamGoalsPerMatch 
+	ON (team1_goals.id = TeamGoalsPerMatch.matchid AND team1_goals.team2 = TeamGoalsPerMatch.teamid);
+
+ 
+
+#2.2 VIEW
+
+#Skriv ut de lagene som har skåret flest (totalt) antall mål.
+
+#PS! Kan være flere enn ett lag.
+create view tot_goals as (
+ (SELECT count(teamid)as tot, teamid FROM goal
+ GROUP BY(teamid)
+ order by (tot) desc))
+ 
+ SELECT tot_goals.teamid from tot_goals 
+ where tot_goals.tot IN(
+ SELECT MAX(tot_goals.tot) from tot_goals )
+ 
+#2.3 CREATE TABLE
+
+#Opprett en ny tabell kalt 'stadium' for å lagre data over stadium, som i tillegg til en 'id' og 'stadiumname' inneholder egne attributter for 'town' og 'capacity'. Attr. 'id' skal være primærnøkkel i den nye tabellen.
+DROP TABLE IF EXISTS stadium;
+CREATE TABLE stadium(
+   id VARCHAR (3) NOT NULL,
+   name VARCHAR(30),
+   town VARCHAR(30),   
+   capacity INT,
+   PRIMARY KEY (id)
+   );
+  
+  show columns from stadium;
+
+   
+  #2.4 INSERT
+
+#Skriv SQL-kode for å flytte verdiene i attr. stadium i game-tabellen over til attr. stadiumname i din nye stadium-tabellen
+
+ #2.5 
+
+#Vi ønsker å endre game-tabellen til å inkl. attr. id fra stadium-tabellen som en ny fremmendnøkkel.
+#Skriv kode som legger til fremmednøkkelen OG setter inn riktig 'id' fra stadium-tabellen inn i oppdatert utgave av game-tabellen.
+
+#2.6
+
+#Slett stadium-attributtet fra game-tabellen (NB! Ikke bruke DELETE her).
+
+#2.7
+
+#Sjekk til slutt: Join av game-tabellen og stadium-tabellen.
