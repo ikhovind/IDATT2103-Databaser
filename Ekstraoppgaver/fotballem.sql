@@ -7,7 +7,15 @@
 --Skriv ut alle kampene (31 stk.) med mdate og teamname på begge lagene i hver kamp sortert stigende etter når
 --
 --kampen ble spillt (dvs. finalen til slutt i resultattabellen).
- 
+
+--ferdig
+SELECT temp.id, temp.mdate, temp.teamname, eteam.teamname FROM(
+    SELECT game.id, game.mdate, eteam.teamname, game.team2
+     FROM game
+    JOIN eteam ON (game.team1 = eteam.id)) as temp
+    JOIN eteam on(temp.team2 = eteam.id)
+    ORDER BY (temp.mdate) ASC
+
 
 --1.2
 --
