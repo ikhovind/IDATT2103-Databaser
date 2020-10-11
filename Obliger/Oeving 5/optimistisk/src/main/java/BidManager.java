@@ -17,7 +17,6 @@ public class BidManager {
         Properties properties = new Properties();
         properties.put("javax.persistence.jdbc.url", "jdbc:mysql://mysql.stud.iie.ntnu.no:3306/ikhovind");
         properties.put("javax.persistence.jdbc.user", "ikhovind");
-        properties.put("javax.persistence.jdbc.password", "Blo33G6F" );
         emf = javax.persistence.Persistence.createEntityManagerFactory("DatabasePU", properties);
     }
 
