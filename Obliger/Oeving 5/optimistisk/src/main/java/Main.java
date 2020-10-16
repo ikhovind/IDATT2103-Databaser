@@ -12,7 +12,7 @@ public class Main{
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection(
-                "jdbc:mysql://mysql.stud.iie.ntnu.no:3306/ikhovind","ikhovind","");
+                "jdbc:mysql://mysql.stud.iie.ntnu.no:3306/ikhovind","ikhovind","Blo33G6F");
             //here sonoo is database name, root is username and password
             Statement stmt=con.createStatement();
             stmt.execute("SET AUTOCOMMIT = 0;");
