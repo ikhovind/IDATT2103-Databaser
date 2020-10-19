@@ -32,13 +32,23 @@ public class Main{
 
                 //budet før vi gjør endringer
                 rs.close();
+                //sjekk
                 bid.execute("UPDATE budrunde set bud = bud + " + additionalBid + ", navn= " + "'" + name + "'" +";");
                 //sjekker budet
+                //sjekker bud
+
+
+                //lås fra
                 ResultSet updatedBid = bid.executeQuery("select bud from budrunde");
-                //dersom noen har rukket å commite før oss
+
+                //dersom noen har rukket å by før oss
+
                 if(updatedBid.next() && updatedBid.getInt(1) == currentBid + additionalBid){
                     System.out.println("Du har nå det høyeste budet med " + currentBid + additionalBid + " kr");
                     bid.execute("commit;");
+                    //lås til
+
+
                 }
                 else{
                     System.out.println("Noen andre har bydd og budet ditt gikk ikke gjennom");
