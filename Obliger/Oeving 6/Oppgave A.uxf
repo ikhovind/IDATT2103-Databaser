@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="13.3">
-  <zoom_level>8</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>896</y>
-      <w>168</w>
-      <h>96</h>
+      <x>20</x>
+      <y>1040</y>
+      <w>210</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>kandidat
 --
@@ -23,10 +23,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>560</x>
-      <y>912</y>
-      <w>176</w>
-      <h>88</h>
+      <x>720</x>
+      <y>1060</y>
+      <w>220</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>Bedrift	
 --
@@ -39,10 +39,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>312</x>
-      <y>904</y>
-      <w>168</w>
-      <h>112</h>
+      <x>410</x>
+      <y>1050</y>
+      <w>210</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>oppdrag
 --
@@ -59,10 +59,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>160</x>
-      <y>712</y>
-      <w>168</w>
-      <h>56</h>
+      <x>220</x>
+      <y>810</y>
+      <w>210</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>kvalifikasjon
 --
@@ -73,25 +73,26 @@
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>96</x>
-      <y>464</y>
-      <w>256</w>
-      <h>128</h>
+      <x>140</x>
+      <y>500</y>
+      <w>320</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>er det slik primary key skal markeres, selv om den er kompositt
 og hvorfor pluss foran
 og ikke datatyper?
 fremmednøkkel er FK?
-Burde jeg ha med join-table i diagrammet når jeg har mange til mange relasjon?</panel_attributes>
+Burde jeg ha med join-table i diagrammet når jeg har mange til mange relasjon?
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>456</x>
-      <y>752</y>
-      <w>168</w>
-      <h>48</h>
+      <x>590</x>
+      <y>860</y>
+      <w>210</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>Sluttattest_mal
 --
@@ -103,10 +104,10 @@ mal_id {PK}
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>416</x>
-      <y>464</y>
-      <w>328</w>
-      <h>144</h>
+      <x>540</x>
+      <y>500</y>
+      <w>410</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>jeg synes det gir mest mening å kun lagre malen for sluttattesten i databasen, for så å bare koble denne med oppdraget når man henter det ut, siden informasjonen knyttet til oppdraget ligger i oppdrag tabellen
 kjøre UNION mellom sluttatest og oppdrag-tabellen, så vil man få ut den gitte beskrivelsen når man vil ha den
@@ -117,10 +118,10 @@ Kandidatens arbeidshistorikk vil lagres i oppdrag-tabellen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>152</x>
-      <y>760</y>
-      <w>128</w>
-      <h>152</h>
+      <x>210</x>
+      <y>870</y>
+      <w>160</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0...*
@@ -131,10 +132,10 @@ Har kvalifikasjon v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>136</x>
-      <y>608</y>
-      <w>168</w>
-      <h>56</h>
+      <x>190</x>
+      <y>680</y>
+      <w>210</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>kvalifikasjon_kandidat
 --
@@ -146,10 +147,10 @@ fg=red</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>160</x>
-      <y>936</y>
-      <w>168</w>
-      <h>40</h>
+      <x>220</x>
+      <y>1090</y>
+      <w>210</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0...1
@@ -160,10 +161,10 @@ Jobber/har jobbet med &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>472</x>
-      <y>928</y>
-      <w>104</w>
-      <h>40</h>
+      <x>610</x>
+      <y>1080</y>
+      <w>130</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0...*
@@ -174,10 +175,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>312</x>
-      <y>760</y>
-      <w>144</w>
-      <h>160</h>
+      <x>410</x>
+      <y>870</y>
+      <w>180</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0...*
