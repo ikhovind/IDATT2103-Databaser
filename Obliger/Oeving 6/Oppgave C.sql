@@ -1,3 +1,10 @@
+USE ikhovind;
+DROP TABLE IF EXISTS kvalifikasjon;
+DROP TABLE IF EXISTS kandidat;
+DROP TABLE IF EXISTS sluttatest_mal;
+DROP TABLE IF EXISTS bedrift;
+DROP TABLE IF EXISTS kandidat_kvalifikasjon;
+
 CREATE TABLE kvalifikasjon(
  kvalifikasjon_id INTEGER NOT NULL AUTO_INCREMENT,
  beskrivelse VARCHAR(30),
@@ -34,18 +41,18 @@ CREATE TABLE oppdrag(
  org_nummer INTEGER,
  kandidat_id INTEGER,
  kvalifikasjon_id INTEGER,
-CONSTRAINT oppdrag_pk PRIMARY KEY(oppdrag_id)
-FOREIGN KEY (org_nummer) REFERENCES bedrift(orgnummer)
-FOREIGN KEY (kandidat_id) REFERENCES kandidat(kandidat_id)
+CONSTRAINT oppdrag_pk PRIMARY KEY(oppdrag_id),
+FOREIGN KEY (org_nummer) REFERENCES bedrift(orgnummer),
+FOREIGN KEY (kandidat_id) REFERENCES kandidat(kandidat_id),
 FOREIGN KEY (kvalifikasjon_id) REFERENCES kvalifikasjon(kvalifikasjon_id)
 
 );
 
 CREATE TABLE kandidat_kvalifikasjon(
  kandidat_id INTEGER,
- kvalifikasjon_id id,
-CONSTRAINT forlag_pk PRIMARY KEY(kandidat_id, kvalifikasjon_id)
-FOREIGN KEY (kandidat_id) REFERENCES kandidat(kandidat_id)
+ kvalifikasjon_id INTEGER,
+CONSTRAINT forlag_pk PRIMARY KEY(kandidat_id, kvalifikasjon_id),
+FOREIGN KEY (kandidat_id) REFERENCES kandidat(kandidat_id),
 FOREIGN KEY (kvalifikasjon_id) REFERENCES kvalifikasjon(kvalifikasjon_id)
 );
 
