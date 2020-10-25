@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>896</y>
+      <w>168</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>kandidat
+--
++kandidat_id {PK}
++fornavn
++etternavn
++telefon
++epost
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>912</y>
+      <w>176</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Bedrift	
+--
++organisasjonsnummer {PK}
++navn
++telefon
++epost</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>312</x>
+      <y>904</y>
+      <w>168</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>oppdrag
+--
++oppdrag_id {PK}
++startdato
++sluttdato
++ant_timer
++orgnummer {FK}
++kandidat_id {FK}
++kvalifikasjon_id {FK}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>712</y>
+      <w>168</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>kvalifikasjon
+--
++kvalifikasjon_id {PK}
++beskrivelse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>96</x>
+      <y>464</y>
+      <w>256</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>er det slik primary key skal markeres, selv om den er kompositt
+og hvorfor pluss foran
+og ikke datatyper?
+fremmednøkkel er FK?
+Burde jeg ha med join-table i diagrammet når jeg har mange til mange relasjon?</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>752</y>
+      <w>168</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Sluttattest_mal
+--
+mal_id {PK}
++beskrivelse
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>416</x>
+      <y>464</y>
+      <w>328</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>jeg synes det gir mest mening å kun lagre malen for sluttattesten i databasen, for så å bare koble denne med oppdraget når man henter det ut, siden informasjonen knyttet til oppdraget ligger i oppdrag tabellen
+kjøre UNION mellom sluttatest og oppdrag-tabellen, så vil man få ut den gitte beskrivelsen når man vil ha den
+
+Kandidatens arbeidshistorikk vil lagres i oppdrag-tabellen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>152</x>
+      <y>760</y>
+      <w>128</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0...*
+m2=0...*
+Har kvalifikasjon v</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>136</x>
+      <y>608</y>
+      <w>168</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>kvalifikasjon_kandidat
+--
+kandidat_id {PK}{FK}
+kvalifikasjons_id {PK}{FK}
+fg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>936</y>
+      <w>168</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0...1
+m2=0..n
+Jobber/har jobbet med &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>928</y>
+      <w>104</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0...*
+m2=1
+&lt; utlyser</panel_attributes>
+    <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>312</x>
+      <y>760</y>
+      <w>144</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0...*
+m2=0...1
+krever kvalifikasjon ^</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
