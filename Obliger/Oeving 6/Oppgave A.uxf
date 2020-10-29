@@ -4,18 +4,18 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>1040</y>
+      <x>0</x>
+      <y>1120</y>
       <w>210</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>kandidat
 --
-+kandidat_id {PK}
-+fornavn
-+etternavn
-+telefon
-+epost
+kandidat_id {PK}
+fornavn
+etternavn
+telefon
+epost
 
 </panel_attributes>
     <additional_attributes/>
@@ -23,89 +23,69 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
-      <y>1060</y>
+      <x>700</x>
+      <y>1130</y>
       <w>220</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>Bedrift	
 --
-+organisasjonsnummer {PK}
-+navn
-+telefon
-+epost</panel_attributes>
+organisasjonsnummer {PK}
+navn
+telefon
+epost</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>410</x>
-      <y>1050</y>
+      <x>390</x>
+      <y>1130</y>
       <w>210</w>
-      <h>140</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>oppdrag
 --
-+oppdrag_id {PK}
-+startdato
-+sluttdato
-+ant_timer
-+orgnummer {FK}
-+kandidat_id {FK}
-+kvalifikasjon_id {FK}
+oppdrag_id {PK}
+startdato
+sluttdato
+/ferdig (sluttdato &lt; dato nå)
+ant_timer
+ 
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>810</y>
+      <x>200</x>
+      <y>890</y>
       <w>210</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>kvalifikasjon
 --
-+kvalifikasjon_id {PK}
-+beskrivelse</panel_attributes>
+kvalifikasjon_id {PK}
+beskrivelse</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>140</x>
-      <y>500</y>
+      <x>120</x>
+      <y>670</y>
       <w>320</w>
       <h>160</h>
     </coordinates>
-    <panel_attributes>er det slik primary key skal markeres, selv om den er kompositt
-og hvorfor pluss foran
-og ikke datatyper?
-fremmednøkkel er FK?
-Burde jeg ha med join-table i diagrammet når jeg har mange til mange relasjon?
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>590</x>
-      <y>860</y>
-      <w>210</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>Sluttattest_mal
---
-mal_id {PK}
-+beskrivelse
+    <panel_attributes>markeres kompositt-nøkler med {PK} etter begge
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>540</x>
-      <y>500</y>
+      <x>520</x>
+      <y>580</y>
       <w>410</w>
       <h>180</h>
     </coordinates>
@@ -118,8 +98,8 @@ Kandidatens arbeidshistorikk vil lagres i oppdrag-tabellen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>870</y>
+      <x>190</x>
+      <y>950</y>
       <w>160</w>
       <h>190</h>
     </coordinates>
@@ -130,39 +110,24 @@ Har kvalifikasjon v</panel_attributes>
     <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>190</x>
-      <y>680</y>
-      <w>210</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>kvalifikasjon_kandidat
---
-kandidat_id {PK}{FK}
-kvalifikasjons_id {PK}{FK}
-fg=red</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
-      <y>1090</y>
+      <x>200</x>
+      <y>1170</y>
       <w>210</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0...1
-m2=0..n
+m2=0..*
 Jobber/har jobbet med &gt;</panel_attributes>
     <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>610</x>
-      <y>1080</y>
+      <x>590</x>
+      <y>1160</y>
       <w>130</w>
       <h>50</h>
     </coordinates>
@@ -175,8 +140,8 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>410</x>
-      <y>870</y>
+      <x>390</x>
+      <y>950</y>
       <w>180</w>
       <h>200</h>
     </coordinates>
@@ -185,5 +150,20 @@ m1=0...*
 m2=0...1
 krever kvalifikasjon ^</panel_attributes>
     <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>910</y>
+      <w>210</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Sluttattest_mal
+--
+mal_id {PK}
+beskrivelse
+</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

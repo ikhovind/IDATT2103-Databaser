@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS bedrift;
 DROP TABLE IF EXISTS kandidat_kvalifikasjon;
 DROP TABLE IF EXISTS oppdrag;
 SET FOREIGN_KEY_CHECKS=1;
+
 CREATE TABLE kvalifikasjon(
  kvalifikasjon_id INTEGER NOT NULL AUTO_INCREMENT,
  beskrivelse VARCHAR(30),
@@ -39,7 +40,8 @@ CREATE TABLE oppdrag(
  oppdrag_id INTEGER NOT NULL AUTO_INCREMENT,
  startdato DATE,
  sluttdato DATE default NULL,
- org_nummer INTEGER,
+ #hvert oppdrag må være bestilt av av et org-nummer
+ org_nummer INTEGER NOT NULL,
  kvalifikasjon_id INTEGER,
  kandidat_id INTEGER,
  ant_timer INTEGER DEFAULT 0,
@@ -72,10 +74,10 @@ insert into bedrift values (1, 'Byggmakker', 5280, 'byggmakker@gmail.com');
 insert into bedrift values (2, 'Linde', 5290, 'Linde@gmail.com');
 insert into bedrift values (3, 'NTNU', 5300, 'NTNU@gmail.com');
 
-insert into oppdrag values (1, DATE('2020-03-12'), null, 3, NULL, 1, default);
-insert into oppdrag values (2, DATE('2020-05-12'), default, 2, 1, 2, NULl);
+insert into oppdrag values (1, DATE('2020-03-12'), default, 3, NULL, 1, default);
+insert into oppdrag values (2, DATE('2020-05-12'), default, 2, 1, 2, default);
 insert into oppdrag values (3, DATE('2020-05-12'), DATE('2020-08-14'), 3, 2, 2, 9);
-insert into oppdrag values (4, DATE('2020-05-17'), DATE('2020-08-19'), 3, NULL, 2, 29);
+insert into oppdrag values (4, DATE('2020-05-17'), DATE('2020-08-19'), 3, default, 2, 29);
 
 insert into kandidat_kvalifikasjon values(1, 1);
 insert into kandidat_kvalifikasjon values (2, 2);

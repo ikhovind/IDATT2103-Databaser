@@ -18,8 +18,9 @@ select kandidat.kandidat_id, kandidat.fornavn, etternavn, kkb.beskrivelse, kvali
 from kandidat
 left join kand_kvalik_besk kkb on kandidat.kandidat_id = kkb.kandidat_id;
 #oppgave 5
+drop view if exists ferdig_oppdrag;
 create view ferdig_oppdrag as(
-select kandidat_id, sluttdato, oppdrag_id, org_nummer, beskrivelse from
+select kandidat_id,startdato, sluttdato, oppdrag_id, org_nummer, beskrivelse from
     (select *
     from oppdrag
     join
@@ -28,8 +29,8 @@ select kandidat_id, sluttdato, oppdrag_id, org_nummer, beskrivelse from
     as malOpp
 where sluttdato IS NOT NULL);
 
-select fornavn, etternavn, sluttdato, oppdrag_id, beskrivelse, bedrift.navn from
-(select fornavn, etternavn, sluttdato, oppdrag_id, beskrivelse, org_nummer
+select fornavn, etternavn, startdato, sluttdato, oppdrag_id, beskrivelse, bedrift.navn from
+(select fornavn, etternavn,startdato, sluttdato, oppdrag_id, beskrivelse, org_nummer
 from ferdig_oppdrag
 left join kandidat k on ferdig_oppdrag.kandidat_id = k.kandidat_id
 where ferdig_oppdrag.kandidat_id = 2) as kand2_ferdig
