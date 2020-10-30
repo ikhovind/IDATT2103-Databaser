@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>1120</y>
+      <x>130</x>
+      <y>630</y>
       <w>210</w>
       <h>120</h>
     </coordinates>
@@ -23,8 +23,8 @@ epost
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
-      <y>1130</y>
+      <x>780</x>
+      <y>550</y>
       <w>220</w>
       <h>110</h>
     </coordinates>
@@ -39,8 +39,8 @@ epost</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>390</x>
-      <y>1130</y>
+      <x>470</x>
+      <y>550</y>
       <w>210</w>
       <h>110</h>
     </coordinates>
@@ -58,8 +58,8 @@ ant_timer
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>890</y>
+      <x>280</x>
+      <y>310</y>
       <w>210</w>
       <h>70</h>
     </coordinates>
@@ -72,8 +72,8 @@ beskrivelse</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>120</x>
-      <y>670</y>
+      <x>200</x>
+      <y>90</y>
       <w>320</w>
       <h>160</h>
     </coordinates>
@@ -84,8 +84,8 @@ beskrivelse</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>520</x>
-      <y>580</y>
+      <x>600</x>
+      <y>0</y>
       <w>410</w>
       <h>180</h>
     </coordinates>
@@ -98,36 +98,36 @@ Kandidatens arbeidshistorikk vil lagres i oppdrag-tabellen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>950</y>
-      <w>160</w>
-      <h>190</h>
+      <x>280</x>
+      <y>370</y>
+      <w>110</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0...*
 m2=0...*
-Har kvalifikasjon v</panel_attributes>
-    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+koblet via v</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>1170</y>
-      <w>210</w>
-      <h>50</h>
+      <x>320</x>
+      <y>510</y>
+      <w>190</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0...1
 m2=0..*
 Jobber/har jobbet med &gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+    <additional_attributes>30.0;10.0;150.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
-      <y>1160</y>
+      <x>670</x>
+      <y>580</y>
       <w>130</w>
       <h>50</h>
     </coordinates>
@@ -140,8 +140,8 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>390</x>
-      <y>950</y>
+      <x>470</x>
+      <y>370</y>
       <w>180</w>
       <h>200</h>
     </coordinates>
@@ -154,8 +154,8 @@ krever kvalifikasjon ^</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>510</x>
-      <y>910</y>
+      <x>590</x>
+      <y>330</y>
       <w>210</w>
       <h>60</h>
     </coordinates>
@@ -165,5 +165,33 @@ mal_id {PK}
 beskrivelse
 </panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>450</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>kvalifikasjon
+--
+kvalifikasjon_id {PK}
+kandidat_id {PK}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>510</y>
+      <w>160</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0...*
+m2=0...*
+har kvalifikasjon ^</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
