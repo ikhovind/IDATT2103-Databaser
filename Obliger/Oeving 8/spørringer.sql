@@ -9,7 +9,7 @@ FROM
     AND lagerplukking.ordre_nr = 1506527)) as onNn
 GROUP BY(NOBB_nummer);
 
--- SQL 2 | Finn ordrenummer koblet til en idiotisk kunde som ikke har med dette selv
+-- SQL 2 | Finn ordrenummer koblet til en kunde som ikke har med dette selv
 SELECT o.ordre_nr, o.bestillings_dato, k.kunde_nr, k.tlf
 FROM ordre o LEFT JOIN kunde k
 ON(o.kunde_nr = k.kunde_nr AND k.etternavn = '' AND k.fornavn = '');
