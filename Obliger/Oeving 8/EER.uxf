@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>12</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>108</x>
+      <y>96</y>
+      <w>144</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+kunde
+--
++ kunde_nr {PK}
++ etternavn
++ fornavn
++ tlf
++ ledig_kreditt</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>480</x>
+      <y>156</y>
+      <w>156</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+ordre
+--
++ ordre_nr {PK}
++ status
++ rabatt
++ bestillings_dato</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>504</x>
+      <y>708</y>
+      <w>180</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+vare
+--
++ NOBB_nummer {PK}
++ lagerbeholdning
++ innkjøpspris
++ salgspris
++ navn
++ beskrivelse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>108</x>
+      <y>768</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+leverandør
+--
++ lev_nr {PK}
++ navn
++ adresse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>324</x>
+      <y>300</y>
+      <w>144</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+lagerplukking
+--
++ ordre_nr {PK}
++ status
++ plukkes_av</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>696</x>
+      <y>300</y>
+      <w>204</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+bestilling
+--
++ bestillingsnummer {PK}
++ dato</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>696</x>
+      <y>564</y>
+      <w>204</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+bestilling_vare
+--
++ bestillingsnummer {PK}
++ NOBB_nummer {PK}
++ antall</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>192</y>
+      <w>144</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..1
+&lt; består av</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>192</y>
+      <w>192</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..1
+består av &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0;120.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>372</y>
+      <w>72</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..n
+har v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>324</x>
+      <y>564</y>
+      <w>180</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>valign=top
+halign=left
+lagerplukking_vare
+--
++ ordre_nr {PK}
++ NOBB_nummer
++ antall</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>384</y>
+      <w>72</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..n
+har v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>648</y>
+      <w>168</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..n
+er av type v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;120.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>648</y>
+      <w>216</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..n
+er av type v</panel_attributes>
+    <additional_attributes>80.0;10.0;80.0;110.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>816</y>
+      <w>288</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..n
+leverer &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>120</y>
+      <w>324</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=0..n
+bestiller &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;230.0;20.0;230.0;30.0</additional_attributes>
+  </element>
+</diagram>
