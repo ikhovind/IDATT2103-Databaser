@@ -1,0 +1,34 @@
+#Oppgave 1
+CREATE VIEW stol_med_type 
+AS(
+    SELECT * from (
+        SELECT * FROM standardstol
+        union 
+        SELECT * FORM spesialstol) as typer
+    LEFT JOIN STOL
+    ON(stol.stol_id = typer.stol_id)
+)
+select count(*) from stol_med_type
+group by (type);
+
+#oppgave 2
+Select AVG(antall) from
+    SELECT * FROM bestilling
+    LEFT JOIN stol
+    ON(stol.stol_id = bestilling.stol_id)
+GROUP BY(TYPE);
+
+#OPPGAVE 3
+create view ikke_levert as (
+    SELECT * FROM ordre 
+        WHERE ferdig_dato < CURRENT_DATE()
+        LEFT JOIN bestilling
+        ON(bestilling.ordre_id = ordre.ordre_id) 
+);
+select sum(antall) from
+ikke_levert;
+
+#oppgave 4
+select sum(antall) from 
+ikke_levert
+where stol_id IN standardstol;
