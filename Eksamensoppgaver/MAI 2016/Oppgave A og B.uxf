@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>658</x>
+      <y>371</y>
+      <w>70</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Kunde
+--
+kunde_id
+fornavn
+etternavn 
+adresse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>364</x>
+      <y>371</y>
+      <w>105</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>Abonemmenttype
+--
+type_id
+navn
+pris
+gigabyte
+smsgrense
+mmsgrense</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>182</x>
+      <y>378</y>
+      <w>105</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Utenlandspris
+--
+pris_id
+abo_id
+oppstartpris
+minuttpris</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>581</x>
+      <y>623</y>
+      <w>105</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Tillegstjenste
+--
+tjeneste_id
+pris</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>462</y>
+      <w>91</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>kunde_abonement
+--
+smsteller
+mmsteller
+gigabyteteller
+tillegstjeneste</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>511</x>
+      <y>763</y>
+      <w>91</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Engangsbetaling
+-
+navn
+beskrivelse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>539</x>
+      <y>665</y>
+      <w>98</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>120.0;10.0;120.0;40.0;10.0;40.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>679</y>
+      <w>126</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=-
+{Total, OR}</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0;160.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>763</y>
+      <w>77</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>Månedsbetaling
+--
+navn
+beskrivelse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>805</x>
+      <y>651</y>
+      <w>105</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Telefon
+--
+_telefonID_
+navn
+pris
+beskrivelse
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>994</x>
+      <y>658</y>
+      <w>70</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Tilbehør
+-
+_tilbehørID_
+navn
+beskrivelse
+pris
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>903</x>
+      <y>672</y>
+      <w>105</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=0..*
+&lt; Hører til</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>406</y>
+      <w>98</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=0..*
+&lt; Har pris</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>399</y>
+      <w>210</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>
+m1=0..*
+m2=0..*
+&lt; teaches to</panel_attributes>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>406</y>
+      <w>21</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1148</x>
+      <y>525</y>
+      <w>70</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Ordre
+-
+ordre_id
+dato
+betalingsmåte
+betalingsfrist
+ordrestatus</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>539</y>
+      <w>182</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..*
+m2=0..*
+&lt; Inneholder</panel_attributes>
+    <additional_attributes>10.0;20.0;240.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>917</x>
+      <y>525</y>
+      <w>70</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Vare
+-
+vareID
+navn
+pris</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>938</x>
+      <y>602</y>
+      <w>119</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0;150.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>861</x>
+      <y>574</y>
+      <w>98</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=-
+{Total, OR}</panel_attributes>
+    <additional_attributes>120.0;10.0;120.0;60.0;10.0;60.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1022</x>
+      <y>476</y>
+      <w>70</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>ordreVare
+-
+antall</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1050</x>
+      <y>504</y>
+      <w>21</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>721</x>
+      <y>126</y>
+      <w>70</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Faktura
+-
+_tlfnr_
+_måned_
+_år_
+betalingsfrist
+Kostnad</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>721</x>
+      <y>259</y>
+      <w>70</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Purring
+-
+_tlfnr_
+_måned_
+_år_
+betalingsfrist
+påslag</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>742</x>
+      <y>196</y>
+      <w>21</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>581</x>
+      <y>525</y>
+      <w>77</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=0..*
+r2=student
+Inkluderer v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>812</x>
+      <y>350</y>
+      <w>70</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>Vurdering
+-
+vurd_id
+kundeid
+varenr
+omtale
+anbefaling</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>924</x>
+      <y>308</y>
+      <w>70</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Vurd_score
+-
+score</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1043</x>
+      <y>357</y>
+      <w>70</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>vurd_kriterium
+-
+_krit_id_
+navn
+maks_score</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>875</x>
+      <y>378</y>
+      <w>182</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1..1
+
+
+Vurderer kriterie &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;240.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>966</x>
+      <y>336</y>
+      <w>21</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>721</x>
+      <y>378</y>
+      <w>105</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=0..*
+Skriver &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>833</x>
+      <y>427</y>
+      <w>98</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1..1
+vurdering av &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0;120.0;190.0</additional_attributes>
+  </element>
+</diagram>
