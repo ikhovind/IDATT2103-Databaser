@@ -30,7 +30,7 @@ select kandidat_id,startdato, sluttdato, oppdrag_id, org_nummer, beskrivelse fro
 where sluttdato IS NOT NULL);
 
 select fornavn, etternavn, startdato, sluttdato, oppdrag_id, beskrivelse, bedrift.navn from
-(select fornavn, etternavn,startdato, sluttdato, oppdrag_id, beskrivelse, org_nummer
+(select fornaovn, etternavn,startdato, sluttdato, oppdrag_id, beskrivelse, org_nummer
 from ferdig_oppdrag
 left join kandidat k on ferdig_oppdrag.kandidat_id = k.kandidat_id
 where ferdig_oppdrag.kandidat_id = 2) as kand2_ferdig
